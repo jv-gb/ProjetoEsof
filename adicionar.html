@@ -59,32 +59,33 @@
                     <!-- Input de arquivo oculto -->
                     <input type="file" id="fileInput" style="display: none;" accept="image/*" />
 
-                    <div class="col mb-5">
-                        <div class="card h-100">
-                            <!--Faixa etária-->
-                            <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">18</div>
-                            <!-- Foto Filme -->
-                            <img id="fotu" class="card-img-top" src="Imagens/deadpool-3.jpg"/>
-                            <!-- Descrição Filme-->
-                            <div class="card-body p-4">
-                                <div class="text-center">
-                                    <!-- Nome Filme -->
-                                    <h5 class="fw-bolder">Deadpool e Wolverine</h5>
-                                </div>
-                                <!-- Avaliação -->
-                                <div class="d-flex justify-content-center small text-warning mb-2">
-                                    <div class="bi-star-fill"></div>
-                                    <div class="bi-star-fill"></div>
-                                    <div class="bi-star-fill"></div>
-                                    <div class="bi-star-fill"></div>
-                                    <div class="bi-star-fill"></div>
-                                </div>
+                    <!-- Local para enviar informações -->
+                    <div class="col-lg-8 mx-auto">
+                        <form id="filmeForm" enctype="multipart/form-data">
+                            <!-- Campo para o nome do filme -->
+                            <div class="form-group mb-3">
+                                <label for="nomeFilme" class="form-label">Nome do Filme:</label>
+                                <input type="text" class="form-control" id="nomeFilme" name="nomeFilme" required>
                             </div>
-                            <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Reservar</a></div>
+                    
+                            <!-- Campo para a imagem do filme -->
+                            <div class="form-group mb-3">
+                                <label for="imagemFilme" class="form-label">Imagem do Filme:</label>
+                                <input type="file" class="form-control" id="imagemFilme" name="imagemFilme" accept="image/*" required>
                             </div>
-                        </div>
+                    
+                            <!-- Pré-visualização da imagem e nome -->
+                            <div class="mb-3">
+                                <h4 class="text-center">Pré-visualização</h4>
+                                <p id="nomePreview" class="text-center"></p>
+                                <img id="imagemPreview" class="img-fluid d-block mx-auto" style="max-width: 300px; max-height: 300px;" />
+                            </div>
+                    
+                            <!-- Botão para enviar o formulário -->
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-primary">Enviar Filme</button>
+                            </div>
+                        </form>
                     </div>
 
 

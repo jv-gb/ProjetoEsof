@@ -1,22 +1,35 @@
-const fileInput = document.getElementById('fileInput');
-const foto = document.getElementById("fotu");
+const filmeForm = document.getElementById('filmeForm');
+const nomeFilmeInput = document.getElementById('nomeFilme');
+const imagemFilmeInput = document.getElementById('imagemFilme');
+const nomePreview = document.getElementById('nomePreview');
+const imagemPreview = document.getElementById('imagemPreview');
 
-// Adiciona um evento de clique à imagem para abrir o explorador de arquivos
-foto.addEventListener('click', function() {
-    fileInput.click();
-});
-
-// Adiciona um evento para quando o arquivo for selecionado
-fileInput.addEventListener('change', function(event) {
+// Evento para exibir a pré-visualização da imagem e do nome do filme
+imagemFilmeInput.addEventListener('change', function(event) {
     const file = event.target.files[0];
     if (file) {
         const reader = new FileReader();
 
         reader.onload = function(e) {
-            // Substitui a imagem existente com a nova imagem selecionada
-            foto.src = e.target.result;
+            // Mostra a imagem selecionada na pré-visualização
+            imagemPreview.src = e.target.result;
         }
 
         reader.readAsDataURL(file); // Lê o arquivo como uma URL de dados
     }
 });
+
+// Evento para exibir o nome do filme na pré-visualização
+nomeFilmeInput.addEventListener('input', function() {
+    nomePreview.textContent = nomeFilmeInput.value;
+});
+
+// Evento de submissão do formulário
+filmeForm.addEventListener('submit', function(event) {
+    event.preventDefault(); // Evita o envio do formulário para um servidor
+
+    // Aqui você pode adicionar o código para enviar os dados via AJAX, se necessário
+    alert('Filme enviado: ' + nomeFilmeInput.value);
+
+});
+
