@@ -2,7 +2,7 @@
     {
         "nome": "Deadpool e Wolverine",
         "faixaEtaria": "18",
-        "imagem": "https://cinesantahelena.com.br/wp-content/uploads/2024/07/deadpool-3-561x800.jpg",
+        "imagem": "./Imagens/deadpool-3.jpg",
         "nota": 8
     },
     {

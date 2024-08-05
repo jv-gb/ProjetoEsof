@@ -14,10 +14,11 @@ fetch('../filmes.json')
             const itemLista = document.createElement('li');
             const botao = document.createElement('button');
             botao.className = 'btn btn-primary botao-editar'
+            itemLista.className = 'list-group-item d-flex justify-content-between'
             botao.id = 'botao-editar-' + index;
             botao.value = index;
             botao.innerText = 'Editar'
-            itemLista.innerHTML = 'Filme ' + (index + 1) + ' : ' + filme.nome;
+            itemLista.innerHTML = '<span><b>Filme ' + (index + 1) + ':</b> ' + filme.nome + '</span>';
             itemLista.appendChild(botao);
             listaFilmesAdicionar.appendChild(itemLista);
         })
@@ -61,4 +62,3 @@ filmeForm.addEventListener('submit', function (event) {
     alert('Filme enviado: ' + nomeFilmeInput.value);
 
 });
-

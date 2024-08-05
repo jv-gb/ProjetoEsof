@@ -63,11 +63,8 @@
             <div class="d-flex gap-3 justify-content-center">
                 <!--Adicionando Filmes-->
 
-                <div>
-                    <ul id="lista-filmes-add">
-
-                    </ul>
-
+                <div class=" w-50">
+                    <ul id="lista-filmes-add" class="list-group"></ul>
                 </div>
 
                 <!-- Local para enviar informações -->
@@ -78,14 +75,14 @@
                             <label for="nomeFilme" class="form-label">Nome do Filme:</label>
                             <input type="text" class="form-control" id="nomeFilme" name="nomeFilme" required>
                         </div>
-                        <div class="d-flex">
+                        <div class="d-flex gap-3 align-items-end">
                             <!-- Campo para a imagem do filme -->
-                            <div class="form-group mb-3">
+                            <div class="form-group mb-3 w-50">
                                 <label for="imagemFilme" class="form-label">Imagem do Filme:</label>
                                 <input type="file" class="form-control" id="imagemFilme" name="imagemFilme"
                                     accept="image/*" required>
                             </div>
-                            <div class="form-group mb-3">
+                            <div class="form-group mb-3 w-50">
                                 <select class="form-select" aria-label="Default select example">
                                     <option selected>Faixa etária</option>
                                     <option value="0">Livre</option>
@@ -96,7 +93,7 @@
                                     <option value="18">18</option>
                                 </select>
                             </div>
-
+                        </div>
 
                             <!-- Pré-visualização da imagem e nome -->
                             <div class="mb-3">
@@ -109,7 +106,6 @@
                             <!-- Botão para enviar o formulário -->
                             <div class="text-center">
                                 <button type="submit" class="btn btn-primary">Enviar Filme</button>
-                            </div>
                     </form>
                 </div>
 
