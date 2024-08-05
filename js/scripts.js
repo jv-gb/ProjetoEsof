@@ -4,7 +4,7 @@ const imagemFilmeInput = document.getElementById('imagemFilme');
 const nomePreview = document.getElementById('nomePreview');
 const imagemPreview = document.getElementById('imagemPreview');
 const listaFilmesAdicionar = document.getElementById('lista-filmes-add');
-const listaFilmes = [];
+
 
 // Puxando filmes do arquivo json
 fetch('../filmes.json')
@@ -12,7 +12,6 @@ fetch('../filmes.json')
     .then(response => {
         response.map((filme, index) => {
             const itemLista = document.createElement('li');
-            listaFilmes.push(filme);
             const botao = document.createElement('button');
             botao.className = 'btn btn-primary botao-editar'
             botao.id = 'botao-editar-' + index;
@@ -22,18 +21,17 @@ fetch('../filmes.json')
             itemLista.appendChild(botao);
             listaFilmesAdicionar.appendChild(itemLista);
         })
-    });
-
- 
-
-for (let index = 0; index < botaoEdicao.length; index++) {
-   console.log('Entrou');
-    botaoEdicao[index].addEventListener('click',() =>{
-    nomeFilmeInput.innerHTML = listaFilmes[index].nome;
-    nomePreview.innerHTML = listaFilmes[index].nome;
-    imagemPreview.src = listaFilmes[index].imagem;
-   }, false)
-}
+        return response;
+    }).then(response => {
+        const botaoEdicao = document.getElementsByClassName('botao-editar');
+        for (let index = 0; index < botaoEdicao.length; index++) {
+            botaoEdicao[index].addEventListener('click',() => {
+            nomeFilmeInput.value = response[index].nome;
+            nomePreview.innerHTML = response[index].nome;
+            imagemPreview.src = response[index].imagem;
+            })
+        }
+    })
 
 // Evento para exibir a pré-visualização da imagem e do nome do filme
 imagemFilmeInput.addEventListener('change', function (event) {
