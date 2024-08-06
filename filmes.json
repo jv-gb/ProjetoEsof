@@ -2,25 +2,25 @@
     {
         "nome": "Deadpool e Wolverine",
         "faixaEtaria": "18",
-        "imagem": "./Imagens/filme1.jpg",
+        "imagem": "./Imagens/deadpool-3.jpg",
         "nota": 8
     },
     {
         "nome": "Harry Potter e o prisioneiro de Askaban",
         "faixaEtaria": "14",
-        "imagem": "./Imagens/filme2.jpg",
+        "imagem": "https://one-cinema.s3.sa-east-1.amazonaws.com/filmes/harry-potter-and-the-prisoner-of-azkaban/07052024/342/capa-harry-potter-and-the-prisoner-of-azkaban.jpg",
         "nota": 9
     },
     {
         "nome": "As aventuras de Tintim",
         "faixaEtaria": "12",
-        "imagem": "./Imagens/filme3.jpg",
+        "imagem": "https://images.justwatch.com/poster/254317172/s718/as-aventuras-de-tintim.jpg",
         "nota": 7
     },
     {
         "nome": "Guerra sem regras",
         "faixaEtaria": "16",
-        "imagem": "./Imagens/filme4.jpg",
+        "imagem": "https://cdn32.ntcdn.pro/testme/dle2/posts/2024-07/xVlsA37y6w9COClNkvk6xq8yN5p.jpg",
         "nota": 10
     }
 ]

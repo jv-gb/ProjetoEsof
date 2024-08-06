@@ -6,21 +6,25 @@ const imagemPreview = document.getElementById('imagemPreview');
 const listaFilmesAdicionar = document.getElementById('lista-filmes-add');
 
 
+createEditMovieList = (filme, index) => {
+    const itemLista = document.createElement('li');
+    const botao = document.createElement('button');
+    botao.className = 'btn btn-primary botao-editar'
+    itemLista.className = 'list-group-item d-flex justify-content-between'
+    botao.id = 'botao-editar-' + index;
+    botao.value = index;
+    botao.innerText = 'Editar'
+    itemLista.innerHTML = '<span><b>Filme ' + (index + 1) + ':</b> ' + filme.nome + '</span>';
+    itemLista.appendChild(botao);
+    listaFilmesAdicionar.appendChild(itemLista);
+}
+
 // Puxando filmes do arquivo json
 fetch('../filmes.json')
     .then((response) => response.json())
     .then(response => {
         response.map((filme, index) => {
-            const itemLista = document.createElement('li');
-            const botao = document.createElement('button');
-            botao.className = 'btn btn-primary botao-editar'
-            itemLista.className = 'list-group-item d-flex justify-content-between'
-            botao.id = 'botao-editar-' + index;
-            botao.value = index;
-            botao.innerText = 'Editar'
-            itemLista.innerHTML = '<span><b>Filme ' + (index + 1) + ':</b> ' + filme.nome + '</span>';
-            itemLista.appendChild(botao);
-            listaFilmesAdicionar.appendChild(itemLista);
+            createEditMovieList(filme, index);
         })
         return response;
     }).then(response => {
@@ -62,3 +66,5 @@ filmeForm.addEventListener('submit', function (event) {
     alert('Filme enviado: ' + nomeFilmeInput.value);
 
 });
+
+
