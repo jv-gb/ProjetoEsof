@@ -8,19 +8,19 @@
     {
         "nome": "Harry Potter e o prisioneiro de Askaban",
         "faixaEtaria": "14",
-        "imagem": "https://one-cinema.s3.sa-east-1.amazonaws.com/filmes/harry-potter-and-the-prisoner-of-azkaban/07052024/342/capa-harry-potter-and-the-prisoner-of-azkaban.jpg",
+        "imagem": "./Imagens/capa-harry-potter-and-the-prisoner-of-azkaban.jpg",
         "nota": 9
     },
     {
         "nome": "As aventuras de Tintim",
         "faixaEtaria": "12",
-        "imagem": "https://images.justwatch.com/poster/254317172/s718/as-aventuras-de-tintim.jpg",
+        "imagem": "./Imagens/as-aventuras-de-tintim.jpg",
         "nota": 7
     },
     {
         "nome": "Guerra sem regras",
         "faixaEtaria": "16",
-        "imagem": "https://cdn32.ntcdn.pro/testme/dle2/posts/2024-07/xVlsA37y6w9COClNkvk6xq8yN5p.jpg",
+        "imagem": "./Imagens/guerra-sem-regras.jpg",
         "nota": 10
     }
 ]
