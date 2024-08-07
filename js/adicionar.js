@@ -38,18 +38,13 @@ fetch('../filmes.json')
         }
     })
 
-// Evento para exibir a pré-visualização da imagem e do nome do filme
+// Evento para exibir a pré-visualização da imagem
 imagemFilmeInput.addEventListener('change', function (event) {
-    const file = event.target.files[0];
-    if (file) {
-        const reader = new FileReader();
-
-        reader.onload = function (e) {
-            // Mostra a imagem selecionada na pré-visualização
-            imagemPreview.src = e.target.result;
-        }
-
-        reader.readAsDataURL(file); // Lê o arquivo como uma URL de dados
+    const url = imagemFilmeInput.value;
+    if (url) {
+        imagemPreview.src = url;
+    } else {
+        imagemPreview.src = '';
     }
 });
 
@@ -62,9 +57,10 @@ nomeFilmeInput.addEventListener('input', function () {
 filmeForm.addEventListener('submit', function (event) {
     event.preventDefault(); // Evita o envio do formulário para um servidor
 
+    console.log(nomeFilmeInput.value);
+    console.log(imagemFilmeInput.value)
+
     // Aqui você pode adicionar o código para enviar os dados via AJAX, se necessário
     alert('Filme enviado: ' + nomeFilmeInput.value);
 
 });
-
-
