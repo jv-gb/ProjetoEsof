@@ -4,7 +4,9 @@ const imagemFilmeInput = document.getElementById('imagemFilme');
 const nomePreview = document.getElementById('nomePreview');
 const imagemPreview = document.getElementById('imagemPreview');
 const listaFilmesAdicionar = document.getElementById('lista-filmes-add');
-
+const faixaEtariaForm = document.getElementById('faixa-etaria-form')
+let filmeIdEdicao;
+let listaFilmesAtual = [];
 
 createEditMovieList = (filme, index) => {
     const itemLista = document.createElement('li');
@@ -23,6 +25,7 @@ createEditMovieList = (filme, index) => {
 fetch('../filmes.json')
     .then((response) => response.json())
     .then(response => {
+        listaFilmesAtual = response;
         response.map((filme, index) => {
             createEditMovieList(filme, index);
         })
@@ -30,13 +33,19 @@ fetch('../filmes.json')
     }).then(response => {
         const botaoEdicao = document.getElementsByClassName('botao-editar');
         for (let index = 0; index < botaoEdicao.length; index++) {
-            botaoEdicao[index].addEventListener('click',() => {
-            nomeFilmeInput.value = response[index].nome;
-            nomePreview.innerHTML = response[index].nome;
-            imagemPreview.src = response[index].imagem;
+            botaoEdicao[index].addEventListener('click', () => {
+                nomeFilmeInput.value = response[index].nome;
+                nomePreview.innerHTML = response[index].nome;
+                imagemPreview.src = response[index].imagem;
+                filmeIdEdicao = response[index].id;
             })
         }
+        console.log(response);
+        return response;
     })
+
+
+
 
 // Evento para exibir a pré-visualização da imagem
 imagemFilmeInput.addEventListener('change', function (event) {
@@ -56,11 +65,32 @@ nomeFilmeInput.addEventListener('input', function () {
 // Evento de submissão do formulário
 filmeForm.addEventListener('submit', function (event) {
     event.preventDefault(); // Evita o envio do formulário para um servidor
+    let filmeString = '{"nome": "' + nomeFilmeInput.value + '", "faixaEtaria": "' + faixaEtariaForm.value + '", "imagem": "' + imagemFilmeInput.value + '"}';
+    const listaAntigaFilmes = listaFilmesAtual;
 
-    console.log(nomeFilmeInput.value);
-    console.log(imagemFilmeInput.value)
+    console.log(listaAntigaFilmes);
 
-    // Aqui você pode adicionar o código para enviar os dados via AJAX, se necessário
+    const listaAtualizadaFilmes = listaAntigaFilmes.map((filme) => {
+        if (filme.id == filmeIdEdicao) {
+            return ({
+                ...filme, nome: nomeFilmeInput.value,
+                faixaEtaria: faixaEtariaForm.value,
+                imagem: imagemFilmeInput.value
+            })
+        }
+        return filme;
+    });
+
+    fetch('/editar', {
+        method: 'PUT',
+        body: JSON.stringify(listaAtualizadaFilmes),
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+    .then(response => console.log(response))
+    .catch(error => console.log(error))
+
     alert('Filme enviado: ' + nomeFilmeInput.value);
 
 });

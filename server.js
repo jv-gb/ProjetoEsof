@@ -9,28 +9,21 @@ app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname)));
 
 // Rota para adicionar filmes
-app.post('../filmes.json', (req, res) => {
+app.put('/editar', (req, res) => {
     const newFilm = req.body;
 
-    fs.readFile('../filmes.json', 'utf8', (err, data) => {
+    fs.writeFile('./filmes.json', JSON.stringify(newFilm), (err) => {
         if (err) {
-            return res.status(500).send('Erro ao ler o arquivo');
+            return res.status(500).send('Erro ao salvar o arquivo');
         }
-        const filmes = JSON.parse(data);
-        filmes.push(newFilm);
-
-        fs.writeFile('../filmes.json', JSON.stringify(filmes, null, 2), (err) => {
-            if (err) {
-                return res.status(500).send('Erro ao salvar o arquivo');
-            }
-            res.send({ message: 'Filme adicionado com sucesso' });
-        });
+        res.send({ message: 'Filme adicionado com sucesso' });
     });
 });
 
+
 // Rota para servir o index.html
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname,'index.html'));
+    res.sendFile(path.join(__dirname, 'index.html'));
 });
 
 // Iniciar o servidor
