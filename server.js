@@ -23,7 +23,7 @@ app.put('/editar', (req, res) => {
 
 // Rota para servir o index.html
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'index.html'));
+    res.sendFile(path.join(__dirname,'principal/index.html'));
 });
 
 // Iniciar o servidor
