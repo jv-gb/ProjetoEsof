@@ -13,7 +13,9 @@ const enviar = document.getElementById('enviar');
 const user = 'admin';
 const password = '1234';
 
-enviar.addEventListener('click',()=>{
+loginFormulario.addEventListener('submit',()=>{
+    event.preventDefault(); //evita comportamento default
+
     console.log('ola mundo')
     console.log(userInput.value)
     console.log(passwordInput.value)
@@ -21,6 +23,4 @@ if(userInput.value == user && passwordInput.value == password){
 
     location.href = "../principal/adicionar.html";
 }
-
-
 })
