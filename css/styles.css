@@ -10825,3 +10825,10 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+.fundo {
+  background-image: url('../assets/background_theater.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
