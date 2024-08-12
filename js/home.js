@@ -11,7 +11,7 @@ createMoviePosters = (filme, index) => {
     poster.src = filme.imagem;
     const divBody = document.createElement('div');
     divBody.classList = 'card-body bg-black text-white rounded-4 opacity-75';
-    divBody.innerHTML = '<span class ="badge text-bg-primary text-wrap">'+filme.faixaEtaria+'</span>';
+    divBody.innerHTML = '<div class="d-flex justify-content-end"><div class="badge text-bg-primary">' + filme.faixaEtaria + '</div></div>';
     divBody.innerHTML += '<div class="text-center"><h5 class="fw-bolder">' + filme.nome +'</h5></div>';
 
     moviePosters[index].appendChild(cardFilme);
