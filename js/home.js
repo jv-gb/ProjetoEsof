@@ -23,8 +23,8 @@ createMoviePosters = (filme, index) => {
 //funçao mudar a cor de acordo com a faixa etaria
 function corFaixaEtaria(filme) {
     switch (filme.faixaEtaria) {
-        case 'livre':
-            return '<div class="d-flex justify-content-end"><div class="badge text-bg-success">' + filme.faixaEtaria + '</div></div>';
+        case '0':
+            return '<div class="d-flex justify-content-end"><div class="badge text-bg-success">' + 'L'+ '</div></div>';
             break;
         case '10':
             return '<div class="d-flex justify-content-end"><div class="badge text-bg-primary">' + filme.faixaEtaria + '</div></div>';
