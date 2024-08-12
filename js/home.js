@@ -8,7 +8,7 @@ createMoviePosters = (filme, index) => {
     poster.id = 'imagemFilme';
     poster.src = filme.imagem;
     const divBody = document.createElement('div');
-    divBody.classList = 'card-body bg-black text-white rounded-4 opacity-75';
+    divBody.classList = 'card-body bg-black text-white  opacity-75';
     divBody.innerHTML = corFaixaEtaria(filme);
     divBody.innerHTML += '<div class="text-center"><h5 class="fw-bolder">' + filme.nome + '</h5></div>';
     moviePosters[index].appendChild(cardFilme);
@@ -16,7 +16,7 @@ createMoviePosters = (filme, index) => {
     cardFilme.appendChild(divBody);
     const botaoComprar = document.createElement('div');
     botaoComprar.classList = 'card-footer p-4 pt-0 border-top-0 bg-transparent';
-    botaoComprar.innerHTML = '<div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Reservar</a></div>'
+    botaoComprar.innerHTML = '<div class="text-center"><a class="btn btn-outline-dark mt-auto text-white" href="#">Reservar</a></div>'
     divBody.appendChild(botaoComprar);
 }
 

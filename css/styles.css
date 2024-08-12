@@ -10832,3 +10832,18 @@ textarea.form-control-lg {
   background-size: cover;
 }
 
+.card {
+  border: none; /* Remove a borda */
+  margin: 0; /* Remove margens */
+}
+
+.card-img-top {
+  border: none; /* Remove a borda da imagem */
+  margin: 0; /* Remove margens da imagem */
+  display: block; /* Remove espaços extras */
+}
+
+.card-body {
+  border: none; /* Remove a borda */
+  margin: 0; /* Remove margens */
+}
