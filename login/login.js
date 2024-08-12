@@ -20,7 +20,7 @@ loginFormulario.addEventListener('submit',()=>{
     console.log(userInput.value)
     console.log(passwordInput.value)
 if(userInput.value == user && passwordInput.value == password){
-
+    
     location.href = "../principal/adicionar.html";
 }
 })
