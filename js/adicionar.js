@@ -11,7 +11,7 @@ let listaFilmesAtual = [];
 createEditMovieList = (filme, index) => {
     const itemLista = document.createElement('li');
     const botao = document.createElement('button');
-    botao.className = 'btn btn-primary botao-editar'
+    botao.className = 'btn btn-dark botao-editar btn-outline-warning'
     itemLista.className = 'list-group-item d-flex justify-content-between'
     botao.id = 'botao-editar-' + index;
     botao.value = index;
