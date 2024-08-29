@@ -10846,4 +10846,8 @@ textarea.form-control-lg {
 .card-body {
   border: none; /* Remove a borda */
   margin: 0; /* Remove margens */
+  height: 165px;
+}
+#imagem-filme{
+  height: 365px;
 }

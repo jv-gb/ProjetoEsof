@@ -5,17 +5,17 @@ createMoviePosters = (filme, index) => {
     cardFilme.classList = 'card';
     const poster = document.createElement('img');
     poster.classList = 'card-img-top';
-    poster.id = 'imagemFilme';
+    poster.id = 'imagem-filme';
     poster.src = filme.imagem;
     const divBody = document.createElement('div');
-    divBody.classList = 'card-body bg-black text-white  opacity-75';
+    divBody.classList = 'd-flex flex-column justify-content-between card-body bg-black text-white  opacity-75';
     divBody.innerHTML = corFaixaEtaria(filme);
     divBody.innerHTML += '<div class="text-center"><h5 class="fw-bolder">' + filme.nome + '</h5></div>';
     moviePosters[index].appendChild(cardFilme);
     cardFilme.appendChild(poster);
     cardFilme.appendChild(divBody);
     const botaoComprar = document.createElement('div');
-    botaoComprar.classList = 'card-footer p-4 pt-0 border-top-0 bg-transparent';
+    botaoComprar.classList = 'card-footer border-top-0 bg-transparent';
     botaoComprar.innerHTML = '<div class="text-center"><a class="btn btn-outline-dark mt-auto text-white" href="#">Reservar</a></div>'
     divBody.appendChild(botaoComprar);
 }
