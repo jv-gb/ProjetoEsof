@@ -1,6 +1,6 @@
 const filmeForm = document.getElementById('filmeForm');
 const nomeFilmeInput = document.getElementById('nomeFilme');
-const imagemFilmeInput = document.getElementById('imagemFilme');
+const imagemFilmeInput = document.getElementById('imagem-filme-adicionar');
 const nomePreview = document.getElementById('nomePreview');
 const imagemPreview = document.getElementById('imagemPreview');
 const listaFilmesAdicionar = document.getElementById('lista-filmes-add');
@@ -40,7 +40,6 @@ fetch('../filmes.json')
                 filmeIdEdicao = response[index].id;
             })
         }
-        console.log(response);
         return response;
     })
 
